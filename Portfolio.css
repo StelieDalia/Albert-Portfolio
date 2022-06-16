@@ -43,6 +43,31 @@ p {
 .section-title span {
     color: gray;
 }
+.cta {
+    display: inline-block;
+    padding: 10px 30px;
+    color: white;
+    background-color: transparent;
+    border: 2px solid rgb(3, 3, 80);
+    font-size: 2rem;
+    text-transform: uppercase;
+    letter-spacing: .1rem;
+    margin-top: 30px;
+    transition: .3s ease; 
+    transition-property: background-color, color;
+}
+.cta:hover {
+    color: white;
+    background-color: rgb(3, 3, 80);
+}
+.brand h1 {
+    font-size: 3rem;
+    text-transform: uppercase;
+    color: white;
+}
+.brand h1 span {
+    color:  rgb(3, 3, 80);
+}
 
 /* Parent Section */
 #Parent {
@@ -59,7 +84,7 @@ p {
     top: 0;
     height: 100%;
     width: 100%;
-    background-color: black;
+    background-color: gray;
     opacity: .7;
     z-index: -1;
 }
@@ -107,29 +132,13 @@ p {
 #Parent h1:nth-child(3) span {
     animation-delay: 2.5s;
 }
-#Parent .cta {
-    display: inline-block;
-    padding: 10px 30px;
-    color: white;
-    background-color: transparent;
-    border-color: 8px solid rgb(3, 3, 80);
-    font-size: 2rem;
-    text-transform: uppercase;
-    letter-spacing: .1rem;
-    margin-top: 30px;
-    transition: .3s ease; 
-    transition-property: background-color, color;
-}
-#Parent .cta:hover {
-    color: white;
-    background-color: rgb(3, 3, 80);
-}
+
 /* End Parent Section */
 
 
 /* Sevices Section */
 #services .services {
-flex-direction: column;
+display: block;
 text-align: center;
 max-width: 1500px;
 margin: 0 auto;
@@ -143,7 +152,7 @@ padding: 100px 0;
     margin-top: 50px;
 }
 #services .services-items {
-    flex-basis: 80%;
+    height: 700px;
     display: flex;
     align-items: flex-start;
     justify-content: center;
@@ -184,6 +193,7 @@ padding: 100px 0;
 /* Projets Section*/
 #projets .projets {
     flex-direction: column;
+    text-align: center;
     max-width: 1200px;
     margin: 0 auto;
     padding: 100px 0;
@@ -194,7 +204,7 @@ padding: 100px 0;
 #projets .all-projets {
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: baseline;
     flex-direction: column;
 }
 #projets .projets-items {
@@ -212,7 +222,7 @@ padding: 100px 0;
     flex-basis: 50%;
     height: 100%;
     display: flex;
-    align-items: flex-start;
+    align-items: center;
     justify-content: center;
     flex-direction: column;
     background-image: linear-gradient(60deg, #29323c 0%, #485563 100%);
@@ -257,14 +267,129 @@ padding: 100px 0;
 
 /* About Section */
 #about .about {
+    display: flex;
     flex-direction: column-reverse;
     text-align: center;
     max-width: 1200px;
     margin: 0 auto;
     padding: 100px 20px;
-
+}
+#about .mamie-left {
+    width: 250px;
+    height: 360px;
+}
+#about .mamie-right {
+    width: 100%;
+}
+#about .mamie-right h2 {
+    font-size: 1.8rem;
+    font-weight: 500;
+    letter-spacing: .2rem;
+    margin-bottom: 10px;
+}
+#about .mamie-right p{
+    margin-bottom: 20px;
+}
+#about .mamie-right .cta {
+    color: gray;
+    margin-bottom: 50px;
+    padding: 10px 20px;
+    font-size: 2rem;
+}
+#about .mamie-left .about-img {
+    height: 100%;
+    width: 100%;
+    position: relative;
+    border: 10px solid white;
+}
+#about .mamie-left .about-img::after {
+    content: "";
+    position: absolute;
+    left: -33px;
+    top: 19px;
+    height: 98%;
+    width: 98%;
+    border: 7px solid rgb(3, 3, 80);
+    z-index: -1;
 }
 /* End About Section */
+
+/* Contact Section */
+#contact .contact {
+    flex-direction: column;
+    max-width: 1200px;
+    margin: 0 auto;
+    position: relative;
+}
+#contact .contact-items {
+    width: 60%;
+    margin-left: 9%;
+}
+#contact .contact-item {
+    width: 80%;
+    padding: 20px;
+    text-align: center;
+    border-radius: 10px;
+    padding: 30px;
+    margin: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    box-shadow: 0px 0px 18px 0 #0000002c;
+}
+#contact .icon{
+    width: 70px;
+    margin: 0 auto;
+    margin-bottom: 10px;
+}
+/* End Contact Section */
+
+/* Footer */
+#footer {
+    background-image: linear-gradient(60deg, #29323c 0%, #485563 100%);
+}
+#footer .footer {
+    min-height: 200px;
+    display: flex;
+    flex-direction: column;
+    padding-top: 50px;
+    padding-bottom: 10px;
+}
+#footer h2 {
+    color: white;
+    font-weight: 500;
+    font-size: 1.8rem;
+    letter-spacing: .1rem;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+#footer .parent {
+    flex-direction: row;
+}
+#footer .social-icon {
+    flex-direction: row;
+    margin-bottom: 30px;
+}
+#footer .social-item {
+    height: 50px;
+    width: 50px;
+    margin: 0 5px;
+}
+#footer .social-item img {
+    filter: grayscale(1);
+    transition: .3s ease filter;
+}
+#footer .social-item:hover img {
+    filter: grayscale(0);
+}
+#footer p{
+    color: white;
+    font-size: 1.3rem;
+    margin-top: 100px;
+    margin-right: 150px;
+}
+/* End Footer */ 
 
 /* Keyframes */
 @keyframes text_reveal_box {
